@@ -159,7 +159,6 @@ end
 
 ---------------------------------------------------------------------------------------------------
 -- [Static] Get a specific scale by its name 
--- TODO use SCALE_NAMES for faster lookup 
 -- @param name (string)
 -- @return table (one of xScale.SCALES) or nil
 
@@ -175,15 +174,14 @@ end
 
 ---------------------------------------------------------------------------------------------------
 -- [Static] Get a specific scale by its name 
--- TODO use SCALE_NAMES for faster lookup 
 -- @param name (string)
 -- @return table (one of xScale.SCALES) or nil
 
 function xScale.get_scale_index_by_name(name)
   TRACE("xScale.get_scale_index_by_name(name)",name)
 
-  for k,v in pairs(xScale.SCALES) do
-    if (v.name == name) then
+  for k,v in ipairs(xScale.SCALE_NAMES) do
+    if (v == name) then
       return k
     end 
   end
