@@ -644,7 +644,7 @@ function xVoiceManager:_register(xmsg)
     and (#self.voices == self.voice_limit)
   then
 
-    LOG("Steal the oldest voice and re-use that column")
+    LOG("Steal the oldest voice and reuse that column")
     local steal_column_idx = self.voices[1].note_column_index
     self:_steal_voice()
     xmsg.note_column_index = steal_column_idx

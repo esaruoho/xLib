@@ -121,7 +121,7 @@ function xPlayPos:__call()
 end
 
 ---------------------------------------------------------------------------------------------------
--- [Static] Obtain a fraction position (only revelant while playback is active)
+-- [Static] Obtain a fraction position (only relevant while playback is active)
 -- @return table (like songpos, but with 'fraction', a number between 0-1)
 
 function xPlayPos.get(pos,beats)

@@ -61,7 +61,7 @@ function xPersistentSettings.store(arr,token_start,token_end,instr)
 end
 
 ---------------------------------------------------------------------------------------------------
--- Retrive and apply the locally stored settings
+-- Retrieve and apply the locally stored settings
 -- TODO deserialize using sandbox
 -- @param token_start (string)
 -- @param token_end (string)

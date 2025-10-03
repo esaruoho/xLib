@@ -354,7 +354,7 @@ function xRules:transmit(out,xmsg_in,ruleset_idx,rule_idx)
       end
     end
   else
-    -- here for compability reasons (xRules v0.5 did not have output options)
+    -- here for compatibility reasons (xRules v0.5 did not have output options)
     triggered,err = self.osc_client:trigger_auto(xmsg)
     str_msg = "Renoise (AUTO) ↩ " .. tostring(xmsg)
   end

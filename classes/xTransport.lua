@@ -97,7 +97,7 @@ function xTransport.restart()
 end
 
 ---------------------------------------------------------------------------------------------------
--- [Static] Toogle pattern-loop in Renoise
+-- [Static] Toggle pattern-loop in Renoise
 
 function xTransport.toggle_loop()
 

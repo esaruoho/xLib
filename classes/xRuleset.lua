@@ -386,7 +386,7 @@ function xRuleset:parse_definition(ruleset_def)
 end
 
 -------------------------------------------------------------------------------
--- @return boolean, true when file was succesfully loaded
+-- @return boolean, true when file was successfully loaded
 -- @return err, string containing error message
 
 function xRuleset:load_definition(file_path)
@@ -463,7 +463,7 @@ end
 --  so you can safely use this method to export a ruleset 
 -- 
 -- @param file_path, path to file (optional)
--- @return boolean, true when succesfully saved
+-- @return boolean, true when successfully saved
 -- @return string, error message when failed
 
 function xRuleset:save_definition(file_path)

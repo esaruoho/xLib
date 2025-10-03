@@ -223,7 +223,7 @@ function xParameterAutomation.paste(envelope,apply_mode,param,seq_range,track_id
       end 
       if (k == #envelope.points) then 
         --print(">>> reached end of automation data",k)
-        -- TODO "continous output", repeat from beginning          
+        -- TODO "continuous output", repeat from beginning          
         point_idx = k
         break
       end

@@ -279,7 +279,7 @@ function xStreamPos:_set_pos(pos)
     -- use the writeahead as the basis for this calculation
     if (self.playpos.line >= (patt_num_lines-writeahead)) then
       --("xStreamPos:_set_pos - reached the end of the former pattern ")
-      -- difference is the remaning lines in old position plus the current line 
+      -- difference is the remaining lines in old position plus the current line 
       local num_lines = (patt_num_lines-self.playpos.line)+pos.line
       self:_increase_by(num_lines)
       self.pos.sequence = pos.sequence

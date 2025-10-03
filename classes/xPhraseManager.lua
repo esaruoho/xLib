@@ -727,7 +727,7 @@ end
 
 --------------------------------------------------------------------------------
 -- export indicated phrases in the instrument
--- @return bool, true when export was succesfull
+-- @return bool, true when export was successful
 -- @return string, error message when a problem was encountered
 -- @return table, on problem, the indices not yet processed
 
@@ -756,7 +756,7 @@ end
 -- @param takeover (bool) [optional]
 -- @param keymap_args (table), see auto_insert_phrase [optional]
 -- @param remove_prefix (bool), remove the "09_0A_" prefix [optional]
--- @return bool, true when import was succesfull
+-- @return bool, true when import was successful
 -- @return string, error message when failed
 
 function xPhraseManager.import_presets(files,instr_idx,insert_at_idx,takeover,keymap_args,remove_prefix)

@@ -863,7 +863,7 @@ function xRule:compile()
           val = val[1]
         end
         -- wrap strings in quotes
-        -- (except sysex, which is interpreted seperately)
+        -- (except sysex, which is interpreted separately)
         if (k ~= xMidiMessage.TYPE.SYSEX) then
           if (type(val)=="string") then
             val = "'"..val.."'"

@@ -655,7 +655,7 @@ end
 
 --------------------------------------------------------------------------------
 -- export a single phrase, create destination if it doesn't exist
--- @return bool, true when export was succesfull
+-- @return bool, true when export was successful
 -- @return xPhrase.ERROR, when an error was encountered
 
 function xPhrase.export_preset(folder,instr_idx,phrase_idx,overwrite,prefix)

@@ -296,11 +296,11 @@ function xLine.resolve_pattern_line(sequence,line,track_idx)
 
   local rns_patt,patt_idx = xPatternSequencer.get_pattern_at_index(sequence)
   local rns_track = rns.tracks[track_idx] 
-  assert(rns_patt,"The specied track does not exist")
+  assert(rns_patt,"The specified track does not exist")
   local rns_ptrack = rns_patt.tracks[track_idx]
-  assert(rns_ptrack,"The specied pattern-track does not exist")
+  assert(rns_ptrack,"The specified pattern-track does not exist")
   local rns_line = rns_ptrack:line(line)
-  assert(rns_line,"The specied pattern-line does not exist")
+  assert(rns_line,"The specified pattern-line does not exist")
 
   return rns_line,patt_idx,rns_patt,rns_track,rns_ptrack
 
@@ -314,9 +314,9 @@ end
 
 function xLine.resolve_phrase_line(line,phrase)
 
-  assert(phrase,"The specied phrase does not exist")
+  assert(phrase,"The specified phrase does not exist")
   local rns_line = phrase:line(line)
-  assert(rns_line,"The specied pattern-line does not exist")
+  assert(rns_line,"The specified pattern-line does not exist")
 
   return rns_line
 

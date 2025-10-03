@@ -103,7 +103,7 @@ function xSequencerSelection.get_selected_index()
 end
 
 ---------------------------------------------------------------------------------------------------
--- [Static] Get a represention of the selected part of the current pattern
+-- [Static] Get a representation of the selected part of the current pattern
 -- @return table or nil if no selection exists
 
 function xSequencerSelection.get_pattern_selection()

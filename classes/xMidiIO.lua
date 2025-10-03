@@ -70,7 +70,7 @@ function xMidiIO:__init(...)
   self.device_ports_changed_observable = renoise.Document.ObservableBang()
   
   ---  xMidiInput
-  self.interpretor = xMidiInput{
+  self.interpreter = xMidiInput{
     multibyte_enabled = args.multibyte_enabled,
     nrpn_enabled = args.nrpn_enabled,
     terminate_nrpns = args.terminate_nrpns,
@@ -91,7 +91,7 @@ function xMidiIO:__init(...)
     self:set_midi_outputs(args.midi_outputs)
   end
 
-  self.interpretor.callback_fn = function(xmsg)
+  self.interpreter.callback_fn = function(xmsg)
     args.midi_callback_fn(xmsg)
   end
 
@@ -158,7 +158,7 @@ function xMidiIO:input_midi(midi_msg,port_name)
   assert(type(midi_msg),"table","Expected midi_msg to be a table")
   assert(type(port_name),"string","Expected port_name to be a string")
 
-  self.interpretor:input(midi_msg,port_name)
+  self.interpreter:input(midi_msg,port_name)
 
 end
 

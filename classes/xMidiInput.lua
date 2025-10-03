@@ -4,7 +4,7 @@ xMidiInput
 
 --[[--
 
-Asynchroneous interpretation of MIDI messages
+Asynchronous interpretation of MIDI messages
 .
 #
 
@@ -19,7 +19,7 @@ About Data Increment and Data Decrement: the value portion of these messages is 
 
 ### How to use
 
-The class is implemented with a callback, which will recieve xMidiMessages
+The class is implemented with a callback, which will receive xMidiMessages
 
     -- define our callback
     myCallback = function(xmsg)

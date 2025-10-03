@@ -414,7 +414,7 @@ function xMidiMessage:create_raw_message()
     }
 
     if not converters[self.message_type] then
-      error("Cound not convert message, unrecognized type"
+      error("Could not convert message, unrecognized type"
         ..tostring(self.message_type))
     else
       local raw_midi = converters[self.message_type]()

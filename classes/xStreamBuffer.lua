@@ -35,7 +35,7 @@ For a example, scheduling an LFO reset at the beginning of a pattern, you would 
 ## Changelog
 
 0.51
-- No dependancies, simplified implementation
+- No dependencies, simplified implementation
 
 0.5 
 - Made part of xLib 
@@ -658,7 +658,7 @@ function xStreamBuffer:write_output(pos,xinc,num_lines)
     local cached_line = tmp_pos.line
     if rns.transport.loop_block_enabled then
       -- TODO don't perform this check when playback is beyond the block-loop
-      -- (we have manully jumped past the loop point, using e.g. page-down)
+      -- (we have manually jumped past the loop point, using e.g. page-down)
       tmp_pos.line = xSongPos.enforce_block_boundary(pos,i)
       --TRACE(">>> xStreamBuffer:write_output - tmp_pos.line",tmp_pos.line,"cached_line",cached_line)
       
