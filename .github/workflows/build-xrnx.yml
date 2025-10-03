@@ -16,7 +16,34 @@ jobs:
         with:
           submodules: false
 
-      # 2. Fail if any .lua file contains forbidden tokens
+      # 2. Checkout cLib repository and copy classes
+      - name: Checkout cLib repository
+        uses: actions/checkout@v2
+        with:
+          repository: esaruoho/cLib
+          path: clib-temp
+          submodules: false
+
+      # 3. Checkout vLib repository and copy classes
+      - name: Checkout vLib repository
+        uses: actions/checkout@v2
+        with:
+          repository: esaruoho/vLib
+          path: vlib-temp
+          submodules: false
+
+      # 4. Copy cLib, vLib, and xLib classes to xLib source directories
+      - name: Copy cLib, vLib, and xLib classes
+        run: |
+          mkdir -p source/cLib/classes
+          mkdir -p source/vLib/classes
+          mkdir -p source/xLib/classes
+          cp -r clib-temp/classes/* source/cLib/classes/
+          cp -r vlib-temp/classes/* source/vLib/classes/
+          cp -r classes/* source/xLib/classes/
+          rm -rf clib-temp vlib-temp
+
+      # 5. Fail if any .lua file contains forbidden tokens
       - name: Check Lua for forbidden tokens
         run: |
           if grep -R -n -E 'goto continue|::continue::' --include '*.lua' .; then
@@ -24,20 +51,20 @@ jobs:
             exit 1
           fi
 
-      # 3. Generate a timestamp-based tag and filename
+      # 6. Generate a timestamp-based tag and filename
       - name: Generate Tag and Filename
         run: |
           TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')
           echo "TAG_NAME=$TIMESTAMP" >> $GITHUB_ENV
           echo "FILENAME=com.renoise.xLib_${TIMESTAMP}.xrnx" >> $GITHUB_ENV
 
-      # 4. Zip the package using the dynamic filename
+      # 7. Zip the package using the dynamic filename
       - name: Zip XRNX Package
         run: |
           zip -r "${{ env.FILENAME }}" . \
             -x "*.git*" "*.github*"
 
-      # 5. Create and push the Git tag
+      # 8. Create and push the Git tag
       - name: Create and Push Tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -47,7 +74,7 @@ jobs:
           git tag "$TAG_NAME"
           git push origin "$TAG_NAME"
 
-      # 6. Create a GitHub release for that tag
+      # 9. Create a GitHub release for that tag
       - name: Create GitHub Release
         id: create_release
         uses: actions/create-release@v1
@@ -59,7 +86,7 @@ jobs:
           draft: false
           prerelease: false
 
-      # 7. Upload the dynamically named .xrnx asset
+      # 10. Upload the dynamically named .xrnx asset
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:

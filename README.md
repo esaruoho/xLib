@@ -1,4 +1,7 @@
-# About xLib
+# com.renoise.xLib.xrnx
+
+xLib is a pure lua library which can add additional functionality to your Renoise tools.  
+This tool contains some unit-tests of the various classes contained in xLib.
 
 The xLib library is a suite of classes that extend the standard Renoise API. 
 
@@ -50,7 +53,4 @@ xLib is used in many of the tools on our github repository:
 https://github.com/renoise/tools/tree/master/Tools
 
 There is a packaged (renoise tool) version of xLib, configured to run some unit-tests:
-https://github.com/renoise/tools/tree/master/Tools/com.renoise.xLib.xrnx
-
-
-
+http://github.com/esaruoho/xLib/releases
