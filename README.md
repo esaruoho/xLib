@@ -54,3 +54,7 @@ https://github.com/renoise/tools/tree/master/Tools
 
 There is a packaged (renoise tool) version of xLib, configured to run some unit-tests:
 http://github.com/esaruoho/xLib/releases
+
+## Recent Updates
+
+- Fixed module resolution issue in cLib dependency (slaxdom.lua) for proper xLib packaging
