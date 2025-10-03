@@ -58,3 +58,4 @@ http://github.com/esaruoho/xLib/releases
 ## Recent Updates
 
 - Fixed module resolution issue in cLib dependency (slaxdom.lua) for proper xLib packaging
+- Corrected slaxdom.lua to work with existing dofile loading system instead of require
