@@ -23,6 +23,7 @@ _trace_filters = {".*"}
 _clibroot = "source/cLib/classes/"
 _vlibroot = 'source/vLib/classes/'
 _xlibroot = "source/xLib/classes/"
+separator = package.config:sub(1,1)  -- Gets \ for Windows, / for Unix
 
 require (_clibroot.."cLib")
 require (_clibroot.."cTable")
