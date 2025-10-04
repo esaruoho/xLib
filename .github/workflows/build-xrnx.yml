@@ -1,5 +1,6 @@
 name: Package xLib as .XRNX
 
+# Updated to use fixed cLib with SLAXML fix
 on:
   workflow_dispatch:
   push:
@@ -32,15 +33,15 @@ jobs:
           path: vlib-temp
           submodules: false
 
-      # 4. Copy cLib, vLib, and xLib classes to xLib source directories
-      - name: Copy cLib, vLib, and xLib classes
+      # 4. Copy full cLib, vLib, and xLib repositories to source directories
+      - name: Copy full cLib, vLib, and xLib repositories
         run: |
-          mkdir -p source/cLib/classes
-          mkdir -p source/vLib/classes
-          mkdir -p source/xLib/classes
-          cp -r clib-temp/classes/* source/cLib/classes/
-          cp -r vlib-temp/classes/* source/vLib/classes/
-          cp -r classes/* source/xLib/classes/
+          mkdir -p source/cLib
+          mkdir -p source/vLib
+          mkdir -p source/xLib
+          cp -r clib-temp/* source/cLib/
+          cp -r vlib-temp/* source/vLib/
+          cp -r ./* source/xLib/
           rm -rf clib-temp vlib-temp
 
       # 5. Fail if any .lua file contains forbidden tokens
@@ -96,5 +97,7 @@ jobs:
           asset_path: ${{ env.FILENAME }}
           asset_name: ${{ env.FILENAME }}
           asset_content_type: application/octet-stream
+
+
 
           
