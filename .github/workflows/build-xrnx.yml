@@ -41,7 +41,7 @@ jobs:
           mkdir -p source/xLib
           cp -r clib-temp/* source/cLib/
           cp -r vlib-temp/* source/vLib/
-          cp -r ./* source/xLib/
+          cp -r ./* source/xLib/ --exclude=source
           rm -rf clib-temp vlib-temp
 
       # 5. Fail if any .lua file contains forbidden tokens
