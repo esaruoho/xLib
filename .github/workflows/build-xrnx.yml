@@ -41,6 +41,18 @@ jobs:
           cp -r clib-temp/* source/cLib/
           cp -r vlib-temp/* source/vLib/
           rm -rf clib-temp vlib-temp
+          
+      # 5. Fix paths in cLib and vLib main.lua files for embedded use
+      - name: Fix paths in embedded main.lua files
+        run: |
+          # Fix cLib main.lua paths
+          sed -i 's|_clibroot = "classes/"|_clibroot = "source/cLib/classes/"|g' source/cLib/main.lua
+          sed -i 's|require ("vDialog")|require ("source/vLib/classes/vDialog")|g' source/cLib/main.lua
+          sed -i 's|require ("TestRunner")|require ("source/cLib/TestRunner")|g' source/cLib/main.lua
+          
+          # Fix vLib main.lua paths
+          sed -i 's|_clibroot = "classes/"|_clibroot = "source/cLib/classes/"|g' source/vLib/main.lua
+          sed -i 's|_vlibroot = "classes/"|_vlibroot = "source/vLib/classes/"|g' source/vLib/main.lua
 
       # 5. Fail if any .lua file contains forbidden tokens
       - name: Check Lua for forbidden tokens
