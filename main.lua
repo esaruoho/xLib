@@ -25,14 +25,17 @@ _vlibroot = 'source/vLib/classes/'
 _xlibroot = "source/xLib/classes/"
 separator = package.config:sub(1,1)  -- Gets \ for Windows, / for Unix
 
-require (_clibroot.."cLib")
-require (_clibroot.."cTable")
-require (_clibroot.."cDebug")
-require (_clibroot.."cFilesystem")
+-- require (_clibroot.."cLib")
+-- require (_clibroot.."cTable")
+-- require (_clibroot.."cDebug")
+-- require (_clibroot.."cFilesystem")
 
-cLib.require (_vlibroot..'vLib')
-cLib.require (_vlibroot..'vDialog')
-cLib.require (_vlibroot..'vTable')
+-- cLib.require (_vlibroot..'vLib')
+-- cLib.require (_vlibroot..'vDialog')
+-- cLib.require (_vlibroot..'vTable')
+
+require ("source/cLib/main")
+require ("source/vLib/main")
 
 cLib.require (_xlibroot.."xLib")
 
