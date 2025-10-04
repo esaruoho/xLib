@@ -36,7 +36,7 @@ cLib.require (_vlibroot..'vTable')
 
 cLib.require (_xlibroot.."xLib")
 
-require ("TestRunner")
+require ("source/xLib/TestRunner")
 
 --------------------------------------------------------------------------------
 -- test runner
