@@ -1,5 +1,6 @@
 # Changelog
 
+
 ## 0.55 - in progress
 - `xMidiIO`: add hot-plug support (device change), improve documentation
 - `xLine/Pattern`: don't pass down tokens when writing, simplify
